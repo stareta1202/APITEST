@@ -1,0 +1,6 @@
+framework module Pods_Karrot {
+  umbrella header "Pods-Karrot-umbrella.h"
+
+  export *
+  module * { export * }
+}
