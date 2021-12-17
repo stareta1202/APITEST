@@ -25,13 +25,12 @@ class APIService {
     init(urlSession: URLSession) {
         self.urlSession = urlSession
     }
-    func getSearch(query: String, _ page: Int? = nil) -> AnyPublisher<SearchBooks, APIError> {
-        var stringPage: String = ""
-        if let page = page { stringPage = "/\(page)" }
-
-        guard let queryUrl = URL(string: url + "search/" + query + stringPage) else {
+    func getSearch(query: String, _ page: Int = 1) -> AnyPublisher<SearchBooks, APIError> {
+        guard let queryUrl = URL(string: url + "search/" + query + "/\(page)") else {
             return Fail(error: APIError.error("유효하지 않은 URL")).eraseToAnyPublisher()
         }
+        
+        print("👁 \(queryUrl)")
         return urlSession.dataTaskPublisher(for: queryUrl)
             .mapError { _ -> APIError in
                 return APIError.requestError

@@ -69,9 +69,9 @@ class MainTableViewCell: UITableViewCell {
     }
     
     private func bind() {
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        subtitleLabel.font = .preferredFont(forTextStyle: .footnote)
         titleLabel.text = book.title
+        subtitleLabel.text = book.subtitle
     }
-    
 }
-
-

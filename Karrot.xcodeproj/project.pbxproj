@@ -18,6 +18,7 @@
 		1211FC7C276C4C4800539AA0 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC7B276C4C4800539AA0 /* BookModel.swift */; };
 		1211FC80276C4D4B00539AA0 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC7F276C4D4B00539AA0 /* APIError.swift */; };
 		1211FC85276C54BC00539AA0 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC84276C54BC00539AA0 /* MainTableViewCell.swift */; };
+		1211FC87276C827100539AA0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC86276C827100539AA0 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		1211FC7B276C4C4800539AA0 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		1211FC7F276C4D4B00539AA0 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		1211FC84276C54BC00539AA0 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		1211FC86276C827100539AA0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		E832F246EC1888F746432905 /* Pods-Karrot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karrot.debug.xcconfig"; path = "Target Support Files/Pods-Karrot/Pods-Karrot.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB1B45AE96AE772AA3C2269 /* Pods_Karrot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Karrot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 			children = (
 				1211FC69276A10E300539AA0 /* ViewController.swift */,
 				1211FC84276C54BC00539AA0 /* MainTableViewCell.swift */,
+				1211FC86276C827100539AA0 /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				1211FC7A276B102400539AA0 /* APIService.swift in Sources */,
 				1211FC68276A10E300539AA0 /* SceneDelegate.swift in Sources */,
 				1211FC80276C4D4B00539AA0 /* APIError.swift in Sources */,
+				1211FC87276C827100539AA0 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
