@@ -45,27 +45,30 @@ class MainTableViewCell: UITableViewCell {
         
     }
     private func setupViews() {
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         mainStackView.alignment = .top
         mainStackView.distribution = .fill
         mainStackView.spacing = 8
         mainStackView.axis = .horizontal
-        mainStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        mainStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        mainStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         
+        leftImageView.translatesAutoresizingMaskIntoConstraints = false
         leftImageView.backgroundColor = .quaternarySystemFill
         leftImageView.layer.masksToBounds = true
         leftImageView.layer.cornerRadius = 6
-        leftImageView.snp.makeConstraints { make in
-            make.height.width.equalTo(72)
-        }
+        leftImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        leftImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+
+        titleStackView.translatesAutoresizingMaskIntoConstraints = false
         titleStackView.axis = .vertical
         titleStackView.alignment = .fill
         titleStackView.distribution = .fill
         titleStackView.spacing = 4
-        titleStackView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
-        }
+        titleStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
     private func bind() {

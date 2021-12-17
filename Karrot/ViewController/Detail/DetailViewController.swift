@@ -54,18 +54,19 @@ class DetailViewController: UIViewController {
         view.backgroundColor = .white
         scrollView.alwaysBounceVertical = true
         view.add(scrollView) { [unowned self] in
-            $0.snp.makeConstraints { [unowned self] (make) in
-                make.top.bottom.equalToSuperview()
-                make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(16)
-                make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(16)
-            }
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+            $0.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+            $0.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 16).isActive = true
+            $0.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         }
         scrollView.add(stackView) { [unowned self] in
-            $0.snp.makeConstraints { [unowned self] make in
-                make.top.bottom.equalToSuperview()
-                make.leading.trailing.equalToSuperview()
-                make.width.equalTo(self.scrollView)
-            }
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
+            $0.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
+            $0.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true
+            $0.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true
+            $0.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor).isActive = true
             $0.axis = .vertical
             $0.distribution = .fill
             $0.alignment = .fill
@@ -118,15 +119,14 @@ class DetailViewController: UIViewController {
                     self.pdfStackView.axis = .vertical
                     self.pdfStackView.addArranged(UILabel()) {
                         $0.text = pdf.key
-                        $0.snp.makeConstraints { make in
-                            make.height.equalTo(32)
-                        }
+                        $0.translatesAutoresizingMaskIntoConstraints = false
+                        $0.heightAnchor.constraint(equalToConstant: 32)
                     }
                     self.pdfStackView.addArranged(PDFView()) {
-                        $0.snp.makeConstraints { make in
-                            make.leading.trailing.equalToSuperview().inset(32)
-                            make.height.equalTo(320)
-                        }
+                        $0.translatesAutoresizingMaskIntoConstraints = false
+                        $0.leadingAnchor.constraint(equalTo: self.pdfStackView.leadingAnchor).isActive = true
+                        $0.trailingAnchor.constraint(equalTo: self.pdfStackView.trailingAnchor).isActive = true
+                        $0.heightAnchor.constraint(equalToConstant: 400).isActive = true
                         $0.autoScales = true
                         $0.displayMode = .singlePageContinuous
                         $0.displayDirection = .vertical
