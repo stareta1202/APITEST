@@ -13,16 +13,13 @@ class DetailViewModel: ObservableObject {
     private lazy var apiService = APIService(urlSession: urlSession)
     private var subscription = Set<AnyCancellable>()
     @Published var ISBNBook: ISBNBook?
+    var error$ = CurrentValueSubject<APIError?, Never>(nil)
 
     init(isbn: String) {
         apiService.getISBN(isbn: isbn)
-            .sink { error in
-                switch error {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print("1234 \(error)")
-                }
+            .sink { [weak self] in
+                guard case .failure(let error) = $0 else { return }
+                self?.error$.send(error)
             } receiveValue: { [weak self] isbnBook in
                 self?.ISBNBook = isbnBook
             }

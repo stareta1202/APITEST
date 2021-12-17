@@ -136,5 +136,22 @@ class DetailViewController: UIViewController {
                 }
             }
             .store(in: &subscription)
+        
+        viewModel.error$.sink { [weak self] error in
+            self?.showAlert(error?.message ?? "알 수 없는 이유가 발생했어요")
+        }
+        .store(in: &subscription)
+    }
+}
+
+extension DetailViewController {
+    func showAlert(_ message: String) {
+        let alert = UIAlertController(title: "오류가 발생했어요", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "돌아가기", style: .default) {[weak self] _ in
+            guard let self = self else { return }
+            self.dismiss(animated: true)
+        }
+        alert.addAction(action)
+        self.present(alert, animated: true)
     }
 }

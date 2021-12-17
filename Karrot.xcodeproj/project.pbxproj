@@ -25,7 +25,18 @@
 		1211FC90276CD3EF00539AA0 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC8F276CD3EF00539AA0 /* DetailViewModel.swift */; };
 		1211FC92276CFDD600539AA0 /* SearchBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC91276CFDD600539AA0 /* SearchBooks.swift */; };
 		1211FC94276CFDF100539AA0 /* ISBNBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC93276CFDF100539AA0 /* ISBNBook.swift */; };
+		1211FC9C276D003500539AA0 /* KarrotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC9B276D003500539AA0 /* KarrotTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1211FC9D276D003500539AA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1211FC5A276A10E300539AA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1211FC61276A10E300539AA0;
+			remoteInfo = Karrot;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		088C83314FE23665D3CD6AE2 /* Pods-Karrot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karrot.release.xcconfig"; path = "Target Support Files/Pods-Karrot/Pods-Karrot.release.xcconfig"; sourceTree = "<group>"; };
@@ -48,6 +59,8 @@
 		1211FC8F276CD3EF00539AA0 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		1211FC91276CFDD600539AA0 /* SearchBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooks.swift; sourceTree = "<group>"; };
 		1211FC93276CFDF100539AA0 /* ISBNBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISBNBook.swift; sourceTree = "<group>"; };
+		1211FC99276D003500539AA0 /* KarrotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KarrotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1211FC9B276D003500539AA0 /* KarrotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarrotTests.swift; sourceTree = "<group>"; };
 		E832F246EC1888F746432905 /* Pods-Karrot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karrot.debug.xcconfig"; path = "Target Support Files/Pods-Karrot/Pods-Karrot.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB1B45AE96AE772AA3C2269 /* Pods_Karrot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Karrot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,6 +74,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1211FC96276D003500539AA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -68,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				1211FC64276A10E300539AA0 /* Karrot */,
+				1211FC9A276D003500539AA0 /* KarrotTests */,
 				1211FC63276A10E300539AA0 /* Products */,
 				FFA9160EA5D05AEDEE711894 /* Pods */,
 				6B5886E6BF45B4C739EF1E92 /* Frameworks */,
@@ -78,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				1211FC62276A10E300539AA0 /* Karrot.app */,
+				1211FC99276D003500539AA0 /* KarrotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +177,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		1211FC9A276D003500539AA0 /* KarrotTests */ = {
+			isa = PBXGroup;
+			children = (
+				1211FC9B276D003500539AA0 /* KarrotTests.swift */,
+			);
+			path = KarrotTests;
+			sourceTree = "<group>";
+		};
 		6B5886E6BF45B4C739EF1E92 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +224,24 @@
 			productReference = 1211FC62276A10E300539AA0 /* Karrot.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1211FC98276D003500539AA0 /* KarrotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1211FC9F276D003500539AA0 /* Build configuration list for PBXNativeTarget "KarrotTests" */;
+			buildPhases = (
+				1211FC95276D003500539AA0 /* Sources */,
+				1211FC96276D003500539AA0 /* Frameworks */,
+				1211FC97276D003500539AA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1211FC9E276D003500539AA0 /* PBXTargetDependency */,
+			);
+			name = KarrotTests;
+			productName = KarrotTests;
+			productReference = 1211FC99276D003500539AA0 /* KarrotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -206,6 +254,10 @@
 				TargetAttributes = {
 					1211FC61276A10E300539AA0 = {
 						CreatedOnToolsVersion = 13.1;
+					};
+					1211FC98276D003500539AA0 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 1211FC61276A10E300539AA0;
 					};
 				};
 			};
@@ -223,6 +275,7 @@
 			projectRoot = "";
 			targets = (
 				1211FC61276A10E300539AA0 /* Karrot */,
+				1211FC98276D003500539AA0 /* KarrotTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,6 +288,13 @@
 				1211FC72276A10E500539AA0 /* LaunchScreen.storyboard in Resources */,
 				1211FC6F276A10E500539AA0 /* Assets.xcassets in Resources */,
 				1211FC6D276A10E300539AA0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1211FC97276D003500539AA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +364,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1211FC95276D003500539AA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1211FC9C276D003500539AA0 /* KarrotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1211FC9E276D003500539AA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1211FC61276A10E300539AA0 /* Karrot */;
+			targetProxy = 1211FC9D276D003500539AA0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1211FC6B276A10E300539AA0 /* Main.storyboard */ = {
@@ -500,6 +576,52 @@
 			};
 			name = Release;
 		};
+		1211FCA0276D003500539AA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VZTRDYYN8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongjun.KarrotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Karrot.app/Karrot";
+			};
+			name = Debug;
+		};
+		1211FCA1276D003500539AA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VZTRDYYN8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongjun.KarrotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Karrot.app/Karrot";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -517,6 +639,15 @@
 			buildConfigurations = (
 				1211FC77276A10E500539AA0 /* Debug */,
 				1211FC78276A10E500539AA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1211FC9F276D003500539AA0 /* Build configuration list for PBXNativeTarget "KarrotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1211FCA0276D003500539AA0 /* Debug */,
+				1211FCA1276D003500539AA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

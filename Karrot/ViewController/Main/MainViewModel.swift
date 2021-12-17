@@ -32,18 +32,12 @@ class MainViewModel: ObservableObject {
                 guard let self = self else {
                     return Fail(error: APIError.error("모종의 이유")).eraseToAnyPublisher()
                 }
-                return self.apiService.getSearch(query: query, page)
+                return self.apiService.getSearch(query: query, -2)
             }
-            .sink { [weak self] error in
+            .sink { [weak self] in
                 guard let self = self else { return }
-                switch error {
-                case .failure(let error):
-                    print("errorrrrr i s : \(error)")
-                    self.error$.send(error)
-                    self.query$.send("")
-                case .finished:
-                    break
-                }
+                guard case .failure(let error) = $0 else { return }
+                self.error$.send(error)
             } receiveValue: { [weak self] searchBooks in
                 guard let self = self else { return }
                 if let total = Int(searchBooks.total) {

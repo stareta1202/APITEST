@@ -8,6 +8,7 @@
 import Foundation
 
 enum APIError: Error {
+    case invalidURL
     case decodeError
     case requestError
     case responseError
@@ -15,6 +16,8 @@ enum APIError: Error {
     
     var message: String {
         switch self {
+        case .invalidURL:
+            return "유효하지 않은 검색어입니다.\n 다시 검색해주세요!"
         case .decodeError:
             return "모종의 이유로 불러오기를 실패했어요 ㅠㅠ"
         case .requestError:

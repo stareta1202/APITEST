@@ -45,7 +45,6 @@ class MainTableViewCell: UITableViewCell {
         
     }
     private func setupViews() {
-        contentView.translatesAutoresizingMaskIntoConstraints = false
         mainStackView.alignment = .top
         mainStackView.distribution = .fill
         mainStackView.spacing = 8
