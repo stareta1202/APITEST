@@ -120,7 +120,7 @@ class DetailViewController: UIViewController {
                     self.pdfStackView.addArranged(UILabel()) {
                         $0.text = pdf.key
                         $0.translatesAutoresizingMaskIntoConstraints = false
-                        $0.heightAnchor.constraint(equalToConstant: 32)
+                        $0.heightAnchor.constraint(equalToConstant: 32).isActive = true
                     }
                     self.pdfStackView.addArranged(PDFView()) {
                         $0.translatesAutoresizingMaskIntoConstraints = false

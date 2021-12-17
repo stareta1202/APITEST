@@ -12,10 +12,13 @@ class MainViewModel: ObservableObject {
     private let urlSession: URLSession = .init(configuration: .default)
     private lazy var apiService = APIService(urlSession: urlSession)
     private var subscription = Set<AnyCancellable>()
+    
     var query$ = CurrentValueSubject<String, Never>("")
+    var error$ = CurrentValueSubject<APIError?, Never>(nil)
     @Published var books: [Book] = []
     @Published var page: Int = 1
     @Published var maxPage: Int = 1
+    
     
     init() {
         getData()
@@ -36,6 +39,7 @@ class MainViewModel: ObservableObject {
                 switch error {
                 case .failure(let error):
                     print("errorrrrr i s : \(error)")
+                    self.error$.send(error)
                     self.query$.send("")
                 case .finished:
                     break

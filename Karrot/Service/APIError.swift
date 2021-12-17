@@ -13,7 +13,7 @@ enum APIError: Error {
     case responseError
     case error(String)
     
-    var message: String? {
+    var message: String {
         switch self {
         case .decodeError:
             return "모종의 이유로 불러오기를 실패했어요 ㅠㅠ"
@@ -21,7 +21,6 @@ enum APIError: Error {
             return "검색한 책이 없어요!"
         case .responseError:
             return "네트워크 상태가 안좋아요! ㅠㅠ"
-            
         case let .error(msg):
             return msg
         }

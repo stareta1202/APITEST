@@ -12,6 +12,8 @@ extension UILabel {
         let label = UILabel()
         label.textAlignment = .center
         label.font = font
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
         return label
     }
 }

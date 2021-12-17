@@ -25,6 +25,7 @@ extension UIImageView {
                     return
                 }
             }
+            
             guard let url = URL(string: url) else { return }
             URLSession.shared.dataTask(with: url) { (data, result, error) in
                 guard error == nil else {
