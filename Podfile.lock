@@ -1,28 +1,20 @@
 PODS:
   - AddThen (1.0.2)
-  - CombineCocoa (0.4.0)
-  - Kingfisher (7.1.1)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - AddThen
-  - CombineCocoa
-  - Kingfisher
   - SnapKit
 
 SPEC REPOS:
   trunk:
     - AddThen
-    - CombineCocoa
-    - Kingfisher
     - SnapKit
 
 SPEC CHECKSUMS:
   AddThen: b26a186cbabf26f168820f577012efc47dfb7427
-  CombineCocoa: 68a050228ce7c53c1c5ac2c57cccf92a7f5c5085
-  Kingfisher: f738f9c4a3415823b8e2985d10aa2d6a9f37bc4d
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 1c979c2916eb3251e7ee041d90c881aec46ec562
+PODFILE CHECKSUM: 93ee62dba2cb0ecab2f3e66f575e594360c22129
 
 COCOAPODS: 1.11.2
