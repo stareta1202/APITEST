@@ -73,5 +73,6 @@ class MainTableViewCell: UITableViewCell {
         subtitleLabel.font = .preferredFont(forTextStyle: .footnote)
         titleLabel.text = book.title
         subtitleLabel.text = book.subtitle
+        leftImageView.setImageUrl(book.imageUrl)
     }
 }

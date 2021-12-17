@@ -19,6 +19,8 @@
 		1211FC80276C4D4B00539AA0 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC7F276C4D4B00539AA0 /* APIError.swift */; };
 		1211FC85276C54BC00539AA0 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC84276C54BC00539AA0 /* MainTableViewCell.swift */; };
 		1211FC87276C827100539AA0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC86276C827100539AA0 /* MainViewModel.swift */; };
+		1211FC89276CAB2900539AA0 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC88276CAB2900539AA0 /* ImageCacheService.swift */; };
+		1211FC8B276CAC0E00539AA0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC8A276CAC0E00539AA0 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		1211FC7F276C4D4B00539AA0 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		1211FC84276C54BC00539AA0 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		1211FC86276C827100539AA0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1211FC88276CAB2900539AA0 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		1211FC8A276CAC0E00539AA0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E832F246EC1888F746432905 /* Pods-Karrot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karrot.debug.xcconfig"; path = "Target Support Files/Pods-Karrot/Pods-Karrot.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB1B45AE96AE772AA3C2269 /* Pods_Karrot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Karrot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -91,6 +95,7 @@
 			children = (
 				1211FC79276B102400539AA0 /* APIService.swift */,
 				1211FC7F276C4D4B00539AA0 /* APIError.swift */,
+				1211FC88276CAB2900539AA0 /* ImageCacheService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 		1211FC83276C523300539AA0 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				1211FC8A276CAC0E00539AA0 /* DetailViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -268,7 +274,9 @@
 				1211FC7A276B102400539AA0 /* APIService.swift in Sources */,
 				1211FC68276A10E300539AA0 /* SceneDelegate.swift in Sources */,
 				1211FC80276C4D4B00539AA0 /* APIError.swift in Sources */,
+				1211FC8B276CAC0E00539AA0 /* DetailViewController.swift in Sources */,
 				1211FC87276C827100539AA0 /* MainViewModel.swift in Sources */,
+				1211FC89276CAB2900539AA0 /* ImageCacheService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
