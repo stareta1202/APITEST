@@ -21,6 +21,8 @@
 		1211FC87276C827100539AA0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC86276C827100539AA0 /* MainViewModel.swift */; };
 		1211FC89276CAB2900539AA0 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC88276CAB2900539AA0 /* ImageCacheService.swift */; };
 		1211FC8B276CAC0E00539AA0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC8A276CAC0E00539AA0 /* DetailViewController.swift */; };
+		1211FC8E276CD3DB00539AA0 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC8D276CD3DB00539AA0 /* UILabel+Extension.swift */; };
+		1211FC90276CD3EF00539AA0 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211FC8F276CD3EF00539AA0 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		1211FC86276C827100539AA0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		1211FC88276CAB2900539AA0 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		1211FC8A276CAC0E00539AA0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1211FC8D276CD3DB00539AA0 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		1211FC8F276CD3EF00539AA0 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		E832F246EC1888F746432905 /* Pods-Karrot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karrot.debug.xcconfig"; path = "Target Support Files/Pods-Karrot/Pods-Karrot.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB1B45AE96AE772AA3C2269 /* Pods_Karrot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Karrot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +81,7 @@
 		1211FC64276A10E300539AA0 /* Karrot */ = {
 			isa = PBXGroup;
 			children = (
+				1211FC8C276CD3C700539AA0 /* Extension */,
 				1211FC81276C521B00539AA0 /* ViewController */,
 				1211FC7E276C4C7D00539AA0 /* Model */,
 				1211FC7D276C4C7000539AA0 /* Service */,
@@ -131,8 +136,17 @@
 			isa = PBXGroup;
 			children = (
 				1211FC8A276CAC0E00539AA0 /* DetailViewController.swift */,
+				1211FC8F276CD3EF00539AA0 /* DetailViewModel.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		1211FC8C276CD3C700539AA0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1211FC8D276CD3DB00539AA0 /* UILabel+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		6B5886E6BF45B4C739EF1E92 /* Frameworks */ = {
@@ -267,12 +281,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1211FC8E276CD3DB00539AA0 /* UILabel+Extension.swift in Sources */,
 				1211FC7C276C4C4800539AA0 /* BookModel.swift in Sources */,
 				1211FC6A276A10E300539AA0 /* ViewController.swift in Sources */,
 				1211FC66276A10E300539AA0 /* AppDelegate.swift in Sources */,
 				1211FC85276C54BC00539AA0 /* MainTableViewCell.swift in Sources */,
 				1211FC7A276B102400539AA0 /* APIService.swift in Sources */,
 				1211FC68276A10E300539AA0 /* SceneDelegate.swift in Sources */,
+				1211FC90276CD3EF00539AA0 /* DetailViewModel.swift in Sources */,
 				1211FC80276C4D4B00539AA0 /* APIError.swift in Sources */,
 				1211FC8B276CAC0E00539AA0 /* DetailViewController.swift in Sources */,
 				1211FC87276C827100539AA0 /* MainViewModel.swift in Sources */,

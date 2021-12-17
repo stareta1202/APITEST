@@ -18,7 +18,6 @@ class MainViewModel: ObservableObject {
     @Published var maxPage: Int = 1
     
     init() {
-
         getData()
     }
     
@@ -31,10 +30,13 @@ class MainViewModel: ObservableObject {
                     return Fail(error: APIError.error("모종의 이유")).eraseToAnyPublisher()
                 }
                 return self.apiService.getSearch(query: query, page)
-            }.sink { error in
+            }
+            .sink { [weak self] error in
+                guard let self = self else { return }
                 switch error {
                 case .failure(let error):
                     print("errorrrrr i s : \(error)")
+                    self.query$.send("")
                 case .finished:
                     break
                 }

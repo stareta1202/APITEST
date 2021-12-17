@@ -26,6 +26,7 @@ class APIService {
         self.urlSession = urlSession
     }
     func getSearch(query: String, _ page: Int = 1) -> AnyPublisher<SearchBooks, APIError> {
+        if query == "" { return Empty<SearchBooks, APIError>(completeImmediately: true).eraseToAnyPublisher()}
         guard let queryUrl = URL(string: url + "search/" + query + "/\(page)") else {
             return Fail(error: APIError.error("유효하지 않은 URL")).eraseToAnyPublisher()
         }
@@ -43,8 +44,8 @@ class APIService {
             .eraseToAnyPublisher()
     }
     
-    func getISBN(isbn: Int) -> AnyPublisher<SearchBooks, APIError> {
-        guard let queryUrl = URL(string: url + "book/" + String(isbn)) else {
+    func getISBN(isbn: String) -> AnyPublisher<ISBNBook, APIError> {
+        guard let queryUrl = URL(string: url + "books/" + isbn) else {
             return Fail(error: APIError.error("유효하지 않은 URL")).eraseToAnyPublisher()
         }
         return urlSession.dataTaskPublisher(for: queryUrl)
@@ -52,7 +53,7 @@ class APIService {
                 return APIError.requestError
             }
             .map(\.data)
-            .decode(type: SearchBooks.self, decoder: JSONDecoder())
+            .decode(type: ISBNBook.self, decoder: JSONDecoder())
             .mapError({ error -> APIError in
                 return APIError.responseError
             })

@@ -85,10 +85,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         searchController.searchBar.placeholder = "책 검색하기"
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.isSearchResultsButtonSelected = true
-        searchController.searchBar.showsCancelButton = false
     }
     
     private func bind() {
+        self.viewModel.query$
+            .filter({ $0.count == 0 })
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] books in
+                print("🤩 \(books.count)")
+                self?.books = []
+                self?.tableView.reloadData()
+            }.store(in: &subscription)
         self.viewModel.$books
             .receive(on: DispatchQueue.main)
             .sink { [weak self] bookList in
@@ -133,15 +140,19 @@ extension ViewController {
             reuseIdentifier: MainTableViewCell.identifier,
             book: books[indexPath.row])
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailVC = DetailViewController.instantiate(with: books[indexPath.row])
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 
 extension ViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
-        if text.count > 1 {
-            viewModel.query$.send(text)
-            if viewModel.page > 1 { viewModel.page = 1 }
-        }
+        print("1111 \(text)")
+        viewModel.query$.send(text)
+        if viewModel.page > 1 { viewModel.page = 1 }
     }
 }
 
