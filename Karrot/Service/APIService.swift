@@ -26,16 +26,16 @@ class APIService {
         }
         
         return urlSession.dataTaskPublisher(for: queryUrl)
-            .mapError { _ -> APIError in
-                return APIError.requestError
+            .mapError { error -> APIError in
+                return APIError.requestError(error)
             }
             .map(\.data)
             .mapError({ error -> APIError in
-                return APIError.responseError
+                return APIError.responseError(error)
             })
             .decode(type: SearchBooks.self, decoder: JSONDecoder())
             .mapError({ error -> APIError in
-                return APIError.decodeError
+                return APIError.decodeError(error)
             })
             .eraseToAnyPublisher()
     }
@@ -45,16 +45,16 @@ class APIService {
             return Fail(error: APIError.invalidURL).eraseToAnyPublisher()
         }
         return urlSession.dataTaskPublisher(for: queryUrl)
-            .mapError { _ -> APIError in
-                return APIError.requestError
+            .mapError { error -> APIError in
+                return APIError.requestError(error)
             }
             .map(\.data)
             .mapError({ error -> APIError in
-                return APIError.responseError
+                return APIError.responseError(error)
             })
             .decode(type: ISBNBook.self, decoder: JSONDecoder())
             .mapError({ error -> APIError in
-                return APIError.decodeError
+                return APIError.decodeError(error)
             })
             .eraseToAnyPublisher()
     }

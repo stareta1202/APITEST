@@ -9,9 +9,9 @@ import Foundation
 
 enum APIError: Error {
     case invalidURL
-    case decodeError
-    case requestError
-    case responseError
+    case decodeError(Error)
+    case requestError(Error)
+    case responseError(Error)
     case error(String)
     
     var message: String {
